@@ -1,6 +1,6 @@
 # ERD Exercise Questions
 
-Three ER Diagram design exercises across different industries. Each question presents a real-world business scenario. Students must identify entities, attributes, relationships, and cardinalities, then draw a complete ER diagram.
+Three ER Diagram design exercises across different industries. Each question presents a detailed real-world business scenario. Students must read the scenario carefully, identify all entities, attributes, and relationships, then draw a complete ER diagram.
 
 ---
 
@@ -17,12 +17,12 @@ Three ER Diagram design exercises across different industries. Each question pre
 ## What to Submit
 
 - ER Diagram drawn using any tool (draw.io, Lucidchart, pen & paper scanned)
-- Use **Chen notation** or **Crow's Foot notation** (confirm with your instructor)
-- Label all entities, attributes, primary keys, relationships, and cardinalities
+- Use **Chen notation** or **Crow's Foot notation** as instructed
+- Label all entities, attributes, primary keys, relationships, and cardinalities clearly
 
 ---
 
-## Marking Criteria (Per Question)
+## Marking Criteria (Per Question — 50 Marks)
 
 | Criteria | Marks |
 |----------|-------|

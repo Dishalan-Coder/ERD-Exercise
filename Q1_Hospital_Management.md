@@ -2,43 +2,34 @@
 
 ## Scenario
 
-A private hospital wants to build a database system to manage its day-to-day operations. The hospital has multiple departments (e.g., Cardiology, Neurology, Orthopedics). Each department has many doctors assigned to it, but a doctor belongs to only one department.
+A private hospital network is expanding its operations and needs a robust database system to manage everything from staff to patient care. You have been hired as a database designer to model this system.
 
-Patients visit the hospital and are assigned to a doctor. A patient can be treated by multiple doctors over time, and a doctor can treat many patients. Each visit is recorded with the visit date, diagnosis, and prescribed treatment.
+The hospital is organized into several **departments**, such as Cardiology, Neurology, Pediatrics, and Orthopedics. Each department has a unique name, a physical location within the hospital building, and a dedicated head of department. A department can employ many doctors, but each doctor is assigned to exactly one department at any given time.
 
-The hospital also maintains a list of medicines. Each prescription issued during a visit can include one or more medicines, and each medicine can appear in many prescriptions. The quantity prescribed for each medicine per prescription must also be stored.
+Each **doctor** working at the hospital has a full name, a medical license number, a specialization (e.g., Surgeon, General Practitioner), a contact phone number, and an email address. Doctors work within their assigned department and are responsible for treating patients.
 
-Rooms are available in the hospital for admitted patients. A patient can be admitted to one room at a time, but a room can admit different patients over different time periods (admission date and discharge date must be stored).
+**Patients** register with the hospital before receiving any treatment. A patient's record includes their full name, date of birth, gender, national identity number, home address, and an emergency contact number. A patient may visit the hospital multiple times over their lifetime.
+
+Every time a patient comes to the hospital, a **visit record** is created. This record captures the date and time of the visit, the patient's presenting symptoms, the diagnosis made by the attending doctor, and the prescribed treatment plan. A single visit is attended by one doctor, but over different visits, a patient may be seen by different doctors. Similarly, a doctor handles many patient visits over their career at the hospital.
+
+During a visit, a doctor may prescribe one or more **medicines** to the patient. The hospital maintains a master list of all available medicines, each with a unique medicine code, a generic name, a brand name, the form it comes in (e.g., tablet, syrup, injection), and its unit price. A single prescription issued during a visit can include multiple medicines, and the same medicine can be prescribed across many different visits. For each medicine included in a prescription, the dosage instructions and the quantity to be dispensed must also be captured.
+
+The hospital has a number of **rooms** available for patients who require admission. Each room has a room number, a room type (e.g., General Ward, ICU, Private Room), a floor number, and a daily charge rate. When a patient is admitted, they are assigned to one specific room. The same room can be used by different patients at different times, but only one patient occupies a room at a time. The admission record must store the date the patient was admitted and the date they were discharged.
 
 ---
 
 ## Your Task
 
-Draw a complete **Entity-Relationship (ER) Diagram** for the above system.
+Draw a complete **Entity-Relationship (ER) Diagram** for the Hospital Management System described above.
 
-### Requirements
+Your diagram must:
 
-1. Identify all **entities** from the scenario.
-2. Define the **attributes** for each entity (underline the primary key).
-3. Identify all **relationships** between entities.
-4. Specify the **cardinality** (1:1, 1:N, M:N) for each relationship.
-5. Identify any **weak entities** if applicable.
-6. For M:N relationships, identify the **relationship attributes**.
-
----
-
-## Hints
-
-| Entity (Suggested) | Key Attributes (Suggested) |
-|--------------------|---------------------------|
-| Department | DeptID, DeptName, Location |
-| Doctor | DoctorID, Name, Specialization, Phone |
-| Patient | PatientID, Name, DOB, Gender, Address |
-| Visit | VisitID, VisitDate, Diagnosis, Treatment |
-| Medicine | MedicineID, MedicineName, Category, UnitPrice |
-| Room | RoomID, RoomType, Floor |
-
-> Note: These are only hints. You may add or modify attributes as you see fit.
+1. Identify and clearly label all **entities** in the system.
+2. List the **attributes** for each entity — underline or mark the **primary key** attribute.
+3. Identify all **relationships** between entities and give each relationship a meaningful name.
+4. Specify the correct **cardinality** (1:1, 1:N, or M:N) and **participation constraints** (total or partial) for every relationship.
+5. Identify any **weak entities** and their identifying relationships.
+6. For every **M:N relationship**, identify and include the **relationship attributes** that belong to the association, not to either individual entity.
 
 ---
 

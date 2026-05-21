@@ -2,47 +2,36 @@
 
 ## Scenario
 
-A hotel chain with multiple **hotels** across different cities wants to build a central booking database. Each hotel has a name, address, city, and star rating.
+A hotel chain that operates properties across multiple cities wants to build a centralized booking and management database. You have been engaged as a database consultant to design this system from scratch.
 
-Each hotel contains multiple **room types** (e.g., Single, Double, Suite), and each room type has a price per night and a maximum occupancy. A hotel can offer many room types, and the same room type name can exist in multiple hotels (treat each room type per hotel as unique).
+The chain operates several **hotels**, each located in a different city. Every hotel has a unique hotel ID, a hotel name, a full street address, the city it is in, a country, a contact phone number, and an official star rating (1 to 5 stars). Each hotel is independently managed but shares the same central database system.
 
-Individual **rooms** belong to a specific hotel and are of a specific room type. Each room has a room number and a floor number.
+Within each hotel, there are different categories of **room types** offered to guests. For example, a hotel might offer Single Rooms, Double Rooms, Deluxe Rooms, Junior Suites, and Presidential Suites. Each room type has a type ID, a type name, a description of what is included (e.g., sea view, king bed, private jacuzzi), the maximum number of guests allowed, and a base price per night. A hotel can offer many room types, and the same type name can exist across multiple hotels — but the pricing and details may differ per hotel.
 
-**Guests** register to make bookings. A guest has a name, email, phone number, and nationality. A guest can make many **bookings**, but each booking belongs to one guest.
+Each physical **room** in a hotel belongs to exactly one hotel and is of exactly one room type. A room has a room ID, a room number (e.g., 101, 202), a floor number, and a status indicating whether it is currently Active, Under Maintenance, or Decommissioned. Multiple rooms in the same hotel can share the same room type (e.g., ten rooms are all Double Rooms on floor 2).
 
-A booking reserves a specific room for a date range (check-in date and check-out date). One booking is for one room only. Multiple bookings can exist for the same room as long as the dates do not overlap (the system will handle that logic — you only need to model the data).
+**Guests** must register a profile before making any booking. A guest's profile includes a guest ID, full name, email address, phone number, nationality, passport or national ID number, and the date they first registered with the system. A guest can make bookings at any hotel in the chain.
 
-Each booking can have optional **additional services** added to it (e.g., Airport Pickup, Breakfast Package, Spa Package). A service has a name and a fixed price. A booking can include many services, and the same service can be added to many bookings.
+When a guest wants to stay at a hotel, they create a **booking**. A booking has a booking ID, the date the booking was made, the check-in date, the check-out date, the number of guests in the party, the booking status (Confirmed, Checked-In, Checked-Out, Cancelled, No-Show), and the total cost calculated at the time of booking. Each booking is for exactly one room, and each booking belongs to exactly one guest. A room can have many bookings over time (different guests at different dates), and a guest can make many bookings across their lifetime as a customer.
+
+Guests can choose to add **extra services** to their booking to enhance their stay. The hotel chain offers a fixed catalogue of services such as Airport Transfer, Breakfast Package, Honeymoon Decoration, Spa Treatment, and Late Checkout. Each service in the catalogue has a service ID, a service name, a description, and a fixed price. When a guest adds a service to their booking, the date on which that service is to be delivered must also be recorded. A single booking can include many services, and the same service can be added to many different bookings.
+
+After completing their stay, guests may submit a **review** for the hotel they visited. A review has a review ID, an overall rating (1 to 10), separate sub-ratings for Cleanliness, Comfort, Location, and Staff (each out of 10), a written comment, and the date the review was submitted. A guest can submit only one review per completed booking. A hotel can receive many reviews from many guests over time.
 
 ---
 
 ## Your Task
 
-Draw a complete **Entity-Relationship (ER) Diagram** for the above system.
+Draw a complete **Entity-Relationship (ER) Diagram** for the Hotel Booking System described above.
 
-### Requirements
+Your diagram must:
 
-1. Identify all **entities** from the scenario.
-2. Define the **attributes** for each entity (underline the primary key).
-3. Identify all **relationships** between entities.
-4. Specify the **cardinality** (1:1, 1:N, M:N) for each relationship.
-5. Identify any **weak entities** if applicable.
-6. For M:N relationships, identify the **relationship attributes**.
-
----
-
-## Hints
-
-| Entity (Suggested) | Key Attributes (Suggested) |
-|--------------------|---------------------------|
-| Hotel | HotelID, Name, City, Address, StarRating |
-| RoomType | RoomTypeID, TypeName, PricePerNight, MaxOccupancy |
-| Room | RoomID, RoomNumber, Floor |
-| Guest | GuestID, Name, Email, Phone, Nationality |
-| Booking | BookingID, CheckInDate, CheckOutDate, TotalCost, Status |
-| Service | ServiceID, ServiceName, Price |
-
-> Note: These are only hints. You may add or modify attributes as you see fit.
+1. Identify and clearly label all **entities** in the system.
+2. List the **attributes** for each entity — underline or mark the **primary key** attribute.
+3. Identify all **relationships** between entities and give each relationship a meaningful name.
+4. Specify the correct **cardinality** (1:1, 1:N, or M:N) and **participation constraints** (total or partial) for every relationship.
+5. Identify any **weak entities** and their identifying relationships.
+6. For every **M:N relationship**, identify and include the **relationship attributes** that belong to the association, not to either individual entity.
 
 ---
 
